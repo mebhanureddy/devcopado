@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <validationRules>
-        <fullName>bs</fullName>
-        <active>true</active>
-        <errorConditionFormula>AND(Number__c &lt;0, Number__c &lt;20) &amp;&amp;  Number__c &lt;&gt;10 &amp;&amp; Number__c  &lt;&gt; 20</errorConditionFormula>
-        <errorMessage>Error</errorMessage> 
-    </validationRules>
+    <fields>
+        <fullName>Type__c</fullName>
+        <label>Type</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cardialogy</fullName>
+                    <default>false</default>
+                    <label>Cardialogy</label>
+                </value>
+                <value>
+                    <fullName>Dermitology</fullName>
+                    <default>false</default>
+                    <label>Dermitology</label>
+                </value>
+                <value>
+                    <fullName>ENT</fullName>
+                    <default>false</default>
+                    <label>ENT</label>
+                </value>
+                <value>
+                    <fullName>Multispeciality</fullName>
+                    <default>false</default>
+                    <label>Multispeciality</label>
+                </value>
+                <value>
+                    <fullName>Neurology</fullName>
+                    <default>false</default>
+                    <label>Neurology</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
 </CustomObject>
