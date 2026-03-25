@@ -4,6 +4,6 @@
         <fullName>bs</fullName>
         <active>true</active>
         <errorConditionFormula>AND(Number__c &lt;0, Number__c &lt;20) &amp;&amp;  Number__c &lt;&gt;10 &amp;&amp; Number__c  &lt;&gt; 20</errorConditionFormula>
-        <errorMessage>asgjk</errorMessage>
+        <errorMessage>Error</errorMessage> 
     </validationRules>
 </CustomObject>
