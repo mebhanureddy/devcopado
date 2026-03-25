@@ -3,6 +3,7 @@
     <fields>
         <fullName>Type__c</fullName>
         <label>Type</label>
+        //
         <required>true</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
