@@ -1,0 +1,100 @@
+<aura:component controller="CreateStaffRecord" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    
+    <!-- Id of the Account the page hosting this component is showing -->
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="isEditMode" type="Boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="staff" type="Staff__c"/>
+    <aura:attribute name="date" type="Date" access="GLOBAL"/>
+   
+     <aura:registerEvent name="staffEvent" type="c:staffViewCompEvent"/>
+    
+    <article class="slds-card">
+        <div class="slds-m-around--large">
+            <h3>Staff information</h3><br/>
+            <div class="slds-form-element" style="margin-top:5px">
+                
+                <aura:if isTrue="{!v.isEditMode}">
+                    <label class="slds-form-element__label">
+                        <abbr class="slds-required" title="required">*</abbr>First Name
+                    </label>
+                    <ui:inputText class="slds-input" value="{!v.staff.First_Name__c}"/>
+                    <aura:set attribute="else">
+                        <label class="slds-form-element__label">First Name</label>
+                        <ui:outputText class="slds-output" value="{!v.staff.First_Name__c}"/>
+                    </aura:set>
+                </aura:if>
+            </div>
+            <div class="slds-form-element" style="margin-top:2px">
+                
+                <aura:if isTrue="{!v.isEditMode}">
+                    <label class="slds-form-element__label">
+                        <abbr class="slds-required" title="required">*</abbr>Last Name
+                    </label>
+                    <ui:inputText class="slds-input" value="{!v.staff.Last_Name__c}"/>
+                    <aura:set attribute="else">
+                        <label class="slds-form-element__label">Last Name</label>
+                        <ui:outputText class="slds-output" value="{!v.staff.Last_Name__c}"/>
+                    </aura:set>
+                </aura:if>
+            </div>
+            <div class="slds-form-element" style="margin-top:2px">
+                
+                <aura:if isTrue="{!v.isEditMode}">
+                    <label class="slds-form-element__label">
+                        <abbr class="slds-required" title="required">*</abbr>Email Address
+                    </label>
+                    <ui:inputText class="slds-input" value="{!v.staff.Email__c}"/>
+                    <aura:set attribute="else">
+                        <label class="slds-form-element__label">Email Address</label>
+                        <ui:outputText class="slds-output" value="{!v.staff.Email__c}"/>
+                    </aura:set>
+                </aura:if>
+            </div>
+            <div class="slds-form-element" style="margin-top:2px">
+                <label class="slds-form-element__label">Phone</label>
+                <aura:if isTrue="{!v.isEditMode}">
+                    <ui:inputText class="slds-input" value="{!v.staff.Phone__c}"/>
+                    <aura:set attribute="else">
+                        <ui:outputText class="slds-output" value="{!v.staff.Phone__c}"/>
+                    </aura:set>
+                </aura:if>
+            </div>
+            
+            <div class="slds-form-element">
+                <div class="slds-form-element__control">
+                    
+                    
+                    <aura:if isTrue="{!v.isEditMode}">
+                        <label class="slds-form-element__label">
+                        <abbr class="slds-required" title="required">*</abbr>Start Date</label>
+                        <ui:inputDate aura:id="StartDate" label=""
+                                      class="slds-input"
+                                      labelClass="slds-form-element__label"
+                                      value="{!v.staff.Start_Date__c}"
+                                      displayDatePicker="true"/>
+                        <aura:set attribute="else">
+                            <label class="slds-form-element__label">Start Date</label>
+                            <ui:outputDate aura:id="StartDate"
+                                      class="slds-output"
+                                           value="{!v.staff.Start_Date__c}"/>
+                                      
+                        </aura:set>
+                    </aura:if>
+                </div>
+            </div>
+            <div class="col-md-4 text-center" style="margin-top:15px">
+                <aura:if isTrue="{!v.isEditMode}">
+                    <ui:button aura:Id="saveButton" class="slds-button slds-button--brand" press="{!c.saveStaff}">Save</ui:button>
+                    <ui:button aura:Id="cancelButton" class="slds-button slds-button--brand" press="{!c.cancelPage}">Cancel</ui:button>
+                    <aura:set attribute="else">
+                        <ui:button aura:Id="editButton" class="slds-button slds-button--brand" press="{!c.editStaff}">Edit</ui:button>
+                        <ui:button aura:Id="delButton" class="slds-button slds-button--brand" press="{!c.delStaff}">Delete</ui:button>    
+                    </aura:set>
+                    
+                </aura:if>
+                
+            </div>            
+        </div>
+    </article>
+</aura:component>

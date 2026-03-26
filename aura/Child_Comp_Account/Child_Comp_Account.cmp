@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:attribute name="Name" type="string" />
+    <aura:attribute name="Phone" type="string" />
+    <aura:attribute name="Industry" type="string" />
+    <aura:attribute name="flag" type="boolean" default="true" />
+    
+    <lightning:input label="Name" value="{!v.Name}" />
+    <lightning:input label="Phone" value="{!v.Phone}" />
+    <lightning:input label="Industry" value="{!v.Industry}" /> <br/>
+    <aura:if isTrue="{!flag}">
+<lightning:button label="Account" onclick="{!c.show}" />
+    </aura:if>
+</aura:component>

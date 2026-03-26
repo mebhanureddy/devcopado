@@ -1,0 +1,9 @@
+<aura:component controller="Apex_C4">
+    <aura:attribute name="data" type="Account[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.show}" />
+    <table>
+        <aura:iteration items="{!v.data}" var="a">
+        <tr><td>{!a.Name} </td><td>{!a.Phone}</td></tr>
+        </aura:iteration>
+    </table>
+</aura:component>

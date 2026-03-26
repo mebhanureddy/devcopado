@@ -1,0 +1,8 @@
+<aura:component controller="Apex_C3">
+    <aura:attribute name="result" type="decimal"/>
+    <lightning:input label="Prin Amount" aura:id="pamount"/>
+    <lightning:input label="rate" aura:id="rate"/>
+    <lightning:input label="Years" aura:id="years"/>
+    <lightning:button label="Intrest" onclick="{!c.show}"/>
+    Interest is {!v.result}
+</aura:component>

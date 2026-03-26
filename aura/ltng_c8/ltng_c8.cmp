@@ -1,0 +1,41 @@
+<aura:component controller="Apex_C8">
+    <aura:attribute name="acc" type="Account" default="{'sObjectType':'Account','Name':'','Phone':'','Industry':''}"/>
+    <aura:attribute name="con" type="Contact" default="{'sObjectType':'Contact','LastName':'','FirstName':'','Phone':''}"/>
+    <aura:attribute name="opp" type="Opportunity" default="{'sObjectType':'Opportunity','Name':'','StageName':'','ClosedDate':''}"/>
+    <aura:attribute name="myVal" type="String"  default="ONE" />
+    <aura:attribute name="recId" type="Id"/>
+    <lightning:card title="Account"/>
+    <lightning:tabset selectedTabId="{!v.myVal}">
+        <div>
+            <lightning:tab label="Account" id="ONE" >
+                <lightning:input label="Name" value="{!v.acc.Name}"/>
+                <lightning:input label="Industry" value="{!v.acc.Industry}"/>
+                <lightning:input label="Phone" value="{!v.acc.Phone}"/>
+                <center>
+                    <lightning:button label="Next" onclick="{!c.nextshow}"/>
+                </center>
+            </lightning:tab>
+        </div>
+        <div>    
+            <lightning:tab label="Contact" id="TWO">
+                <lightning:input label="LastName" value="{!v.con.LastName}"/>
+                <lightning:input label="FirstName" value="{!v.con.FirstName}"/>
+                <lightning:input label="Phone" value="{!v.con.Phone}"/>
+                <center>
+                    <lightning:button label="Previous" onclick="{!c.previousshow}"/>
+                    <lightning:button label="Next" onclick="{!c.nextshow}"/>
+                </center>
+            </lightning:tab>
+        </div>
+        <lightning:tab label="Opportunity" id="THREE">
+            <lightning:input label="Name" value="{!v.opp.Name}"/>
+            <lightning:input label="Stage" value="{!v.opp.StageName}"/>
+            <lightning:input label="CloseDate" value="{!v.opp.CloseDate}" type="Date"/>
+            <center>
+                <lightning:button label="Previous" onclick="{!c.previousshow}"/>
+                <lightning:button label="Finish" onclick="{!c.callMe}"/>
+            </center>
+        </lightning:tab>
+    </lightning:tabset>
+    {!v.recId}
+</aura:component>

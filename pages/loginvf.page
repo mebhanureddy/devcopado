@@ -1,0 +1,58 @@
+<apex:page title="SWAYAMVARAM" sidebar="false" showHeader="false" controller="Matrimony" lightningStylesheets="true" >
+
+   <style>
+   body {
+           
+            
+    body, html {  
+        
+    width: 100%;z
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display:table;
+}
+body {
+    display:table-cell;
+    vertical-align:middle;
+}
+form {
+    display:table;
+    margin:auto;
+}
+       
+</style>
+   
+     <center><style>
+		#fonttext{
+		font-size:80px;
+        font:Salesforcesans;
+		color:black;
+        text-align:center;
+	}
+    </style>
+    
+      <h1 id="fonttext"><!--<apex:outputLabel style="color:green;font:Salesforcesans ; font-size:100px;" > --> SWAYAMVARAM </h1><!--</apex:outputLabel></b> -->   
+        
+   </center>
+<center>
+   
+     <apex:form >
+         
+  <apex:panelGrid columns="2" style="margin-top:1em;">
+            <p><b>User Name </b><br />
+          <apex:inputField id="MailID__c" value="{!ussser.MailID__c}" required="true"/>
+        <b> Password </b><br />
+                <apex:inputSecret value="{!ussser.Password__c}" required="true" /> <br/> </p>
+         <apex:pageMessages rendered="{!Apex_message}"/>
+              </apex:panelGrid>
+         
+           <div style="text-align:center;">
+              <apex:commandButton style="text-align:center;color:black;font:Salesforcesans;font-size:15px;" value="Login" action="{!login}" />
+               <apex:commandButton style="text-align:center;color:black;font:Salesforcesans;font-size:15px;" value="New user" action="{!newuser}" immediate="true" />
+       </div>
+ </apex:form>
+
+    </center>
+         
+</apex:page>

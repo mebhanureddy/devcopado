@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="input" type="string"/>
+    <div aura:id="change">
+    <lightning:input label="Enter" onfocus="{!c.onfocus}"
+                     			   onblur="{!c.onblur}"/>
+    </div>
+</aura:component>

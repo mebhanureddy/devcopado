@@ -1,0 +1,20 @@
+<apex:page standardController="Profile__c" recordSetVar="Profiles__c" lightningStylesheets="true">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!Profiles__c}" var="pro" >
+                <apex:column value="{!pro.Photo__c}" />
+                <apex:column value="{!pro.name}"/>
+                <apex:column value="{!pro.Religion__c}"/>
+                <apex:column value="{!pro.Occupation__c}"/>
+  				<apex:column value="{!pro.Location__c}"/>
+                
+            </apex:pageBlockTable>     	
+        </apex:pageBlock>
+			<div align="center">
+                <apex:commandButton value="First" action="{!first}"  />                 
+                <apex:commandButton value="Last" action="{!last}" /> 
+            	 <apex:commandButton value="Next" action="{!next}"  />                 
+                <apex:commandButton value="Previous" action="{!previous}" /> 
+            </div> 
+    </apex:form>
+</apex:page>

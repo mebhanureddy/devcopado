@@ -1,0 +1,12 @@
+<apex:page standardController="Profile__c"  extensions="Matrimony">
+<apex:form >
+ <apex:pageBlock title="All Dtp">
+ <apex:pageblockTable value="{!mydtpList}" var="item">
+ <apex:column value="{!item.Name}"/>
+ <apex:column value="{!item.Phone__c}"/>
+ <apex:column value="{!item.Annual_Income__c}"/>
+ 
+</apex:pageblockTable>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

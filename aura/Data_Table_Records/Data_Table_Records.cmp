@@ -1,0 +1,27 @@
+<aura:component controller="datatabledisplay"
+               implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+               access="global">
+   <aura:attribute name="teacherrec" type="Boolean" default="false"/>
+    <aura:attribute name="DetailPage" type="Boolean" default="false"/>
+   <aura:attribute name="studentrec" type="Boolean" default="false"/>
+   <aura:attribute name="selected" type="string"/>
+      <lightning:tabset selectedTabId="{!v.selected}" >
+          <lightning:tab label="Home">
+          </lightning:tab>
+       <lightning:tab label="teachers" id="Phone__c" onactive="{!c.teacher}">
+           <lightning:button label="new" title="Neutral action" onclick="{! c.createRecord}"/>
+           <aura:if isTrue="{!v.teacherrec}">
+               <c:Data_table_Records2 selected="{!v.selected}"/>
+           </aura:if>
+            <aura:if isTrue="{!v.DetailPage}">
+                <c:detailspage selected="{!v.selected}"/>
+           </aura:if>
+       </lightning:tab>
+       <lightning:tab label="students" id="Watch__c" onactive="{!c.student}">
+            <lightning:button label="new" title="Neutral action" onclick="{! c.createRecord}"/>
+           <aura:if isTrue="{!v.studentrec}">
+               <c:Data_table_Records2 selected="{!v.selected}"/>
+           </aura:if>
+       </lightning:tab>
+   </lightning:tabset>
+</aura:component>

@@ -1,0 +1,14 @@
+<aura:component controller="App_Event_Record_Search">
+    <aura:handler event="c:App_Event_ACC_Record_Search" action="{!c.handleApplicationEvent}"/>
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="data" type="object" />
+    <aura:attribute name="accId" type="string"  />
+    <aura:attribute name="flag" type="Boolean" default="false" />
+    <aura:if isTrue="{!v.flag}">
+        <lightning:datatable keyField="id"
+                             data="{!v.data}"
+                             columns="{!v.columns}"
+                             maxColumnWidth="200"
+                             hideCheckboxColumn="true"/>
+    </aura:if>
+</aura:component>

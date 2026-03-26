@@ -1,0 +1,53 @@
+<apex:page sidebar="false" showHeader="false" Controller="Matrimony"  lightningStylesheets="true">
+   <apex:slds />
+    
+<!-- Page Header -->
+    <style>
+	#fonttext{
+		font-size:60px;
+        font:Salesforcesans;
+		color:black;
+        background:#f3f2f2;
+        text-align:center;
+	}
+    </style>
+    <h1  id="fonttext">  SWAYAMVARAM </h1>  
+<!-- Begin Form -->
+    <apex:form >
+        <apex:pageBlock >
+<!-- Fields -->
+             <apex:pageBlockSection title="Personal details" >
+                 <apex:inputField value="{!ussser.Name}" required="true"/>  
+                 <apex:inputField value="{!ussser.MailID__c}" />
+                 <apex:inputField value="{!ussser.Password__c}" />
+                 <apex:inputField value="{!ussser.Gender__c}" />
+                 <apex:inputField value="{!ussser.Religion__c}" />
+                 <apex:inputField value="{!ussser.Caste__c}" />
+                 <apex:inputField value="{!ussser.Mother_Tongue__c}" />
+                 <apex:inputField value="{!ussser.Phone__c}" />
+                 <apex:inputField value="{!ussser.Date_of_Bith__c}" />
+                 <apex:inputField value="{!ussser.Height__c}" />
+                 <apex:inputField value="{!ussser.Education__c}" />
+                 <apex:inputField value="{!ussser.Occupation__c}" />
+                 <apex:inputField value="{!ussser.Annual_Income__c}" />
+                 <apex:inputField value="{!ussser.Location__c}" />
+                 <apex:inputField value="{!ussser.Assets_Value__c}" />
+                 <apex:inputField value="{!ussser.Eating_habit__c}" />
+                 <apex:inputField value="{!ussser.Drinking_Habit__c}" />
+                 <apex:inputField value="{!ussser.Smoking__c}" />
+                 <apex:inputField value="{!ussser.Address__c}" />
+                 <apex:inputField value="{!ussser.Languages_Known__c}" />
+                <apex:inputField value="{!ussser.Photo__c}" style="max-wiidth:300px;max-height:100px;" required="true"/>
+             </apex:pageBlockSection>
+            
+
+         
+      
+    <!-- Buttons --> 
+             <apex:pageBlockButtons location="bottom">
+						   <apex:commandButton value="Save" action="{!Register}" />
+              			   <apex:commandButton value="Reset" onclick="this.form.reset();return false;" />
+             </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

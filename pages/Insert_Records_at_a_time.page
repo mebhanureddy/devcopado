@@ -1,0 +1,26 @@
+<apex:page controller="Insert_Records_at_a_time">
+        <apex:form >
+        <apex:pageBlock title="accountdetails">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!acc.Name}"/>
+                <apex:inputField value="{!acc.phone}"/>
+                <apex:inputField value="{!acc.industry}"/>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+        <apex:pageBlock title="contactdetails">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!con.Lastname}"/>
+                <apex:inputField value="{!con.phone}"/>
+                <apex:inputField value="{!con.email}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="opportunitydetails">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!opp.Name}"/>
+                <apex:inputField value="{!opp.CloseDate}"/>
+                <apex:inputField value="{!opp.StageName}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:commandButton value="save" action="{!save}"/>
+    </apex:form>
+</apex:page>

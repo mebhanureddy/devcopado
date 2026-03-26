@@ -1,0 +1,57 @@
+<aura:component controller="TabController">
+    <aura:attribute name="obj" type="SObject[]" default="" />   
+    <lightning:tabset variant="scoped">
+        <lightning:tab title="Account Details " id="accounts" onactive="{! c.handleActive }">
+            <aura:set attribute="label" >
+                Account
+                <lightning:icon iconName="standard:account" />
+            </aura:set>
+            <aura:set attribute="body" >
+                <aura:iteration items="{!v.obj}" var="item">
+                    <ul>
+                        <li>    {!item.Name}-- {!item.Id}   </li> 
+                    </ul>
+                </aura:iteration>
+            </aura:set>
+        </lightning:tab>
+        <lightning:tab title="Contact Details " id="contacts" onactive="{! c.handleActive }">
+            <aura:set attribute="label">
+                Contact
+                <lightning:icon iconName="standard:contact" />
+            </aura:set>
+            <aura:set attribute="body" >
+                <aura:iteration items="{!v.obj}" var="item">
+                    <ul>
+                        <li>    {!item.Name}-- {!item.Id}   </li> 
+                    </ul>
+                </aura:iteration>
+            </aura:set>
+        </lightning:tab>
+        <lightning:tab title="Campaign Details " id="campaign" onactive="{! c.handleActive }">
+            <aura:set attribute="label">
+                Campaign
+                <lightning:icon iconName="standard:campaign" />
+            </aura:set>
+            <aura:set attribute="body" >
+                <aura:iteration items="{!v.obj}" var="item">
+                    <ul>
+                        <li>    {!item.Name}-- {!item.Id}   </li> 
+                    </ul>
+                </aura:iteration>
+            </aura:set>
+        </lightning:tab>
+        <lightning:tab title="Case Details " id="case" onactive="{! c.handleActive }">
+            <aura:set attribute="label">
+                Case
+                <lightning:icon iconName="standard:case" />
+            </aura:set>
+            <aura:set attribute="body" >
+                <aura:iteration items="{!v.obj}" var="item">
+                    <ul>
+                        <li>    {!item.casenumber}-- {!item.Id}   </li> 
+                    </ul>
+                </aura:iteration>
+            </aura:set>
+        </lightning:tab>
+    </lightning:tabset>
+</aura:component>

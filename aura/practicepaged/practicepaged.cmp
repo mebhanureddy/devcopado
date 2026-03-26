@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <div class="slds-p-around_medium">
+        <h1 class="red">Bhanu Prakash Reddy</h1>
+        <p>paragraph</p>
+        <div class="blue">div tag</div>
+        <span class="green">span tag</span>.
+    </div>
+    <lightning:button value="Component" Label="Component" onclick="{!c.doclick}"/>
+</aura:component>

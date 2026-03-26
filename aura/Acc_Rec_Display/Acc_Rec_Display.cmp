@@ -1,0 +1,35 @@
+<aura:component controller="accountsWithContactsClass" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="acclist" type="Account[]"/>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th scope="col" class="">
+                    <div class="slds-truncate" title="Name">Account Name</div>
+                </th>
+                
+                <th scope="col" class="">
+                    <div class="slds-truncate" title="Phone">Phone</div>
+                </th>
+                <th scope="col" class="">
+                    <div class="slds-truncate" title="Type">Type</div>
+                </th>  
+            </tr>
+        </thead>  
+        <tbody>
+            <aura:iteration items="{!v.acclist}" var="accs">
+                <tr class="slds-hint-parent">
+                    <td scope="row" data-label=" Name">
+                        <div class="slds-truncate" >{!accs.Name}</div>
+                    </td>
+                    <td scope="row" data-label="Phone">
+                        <div class="slds-truncate" >{!accs.Phone}</div>
+                    </td>
+                    <td scope="row" data-label="Type">
+                        <div class="slds-truncate" >{!accs.Type}</div>
+                    </td>    
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>  
+</aura:component>

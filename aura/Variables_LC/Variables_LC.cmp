@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="Name" type="String" Default="Bhanu"/>
+    <aura:attribute name="Age" type="Integer" Default="22"/>
+    <aura:attribute name="Acc" type="Account"/>
+    <aura:attribute name="numberslist" type="List" description="array holds number of integers"/>
+    <aura:attribute name="numberslist1" type="integer[]" default="array holds number of integers"/>
+    <aura:attribute name="mapvariable" type="map" default="{Bhanu: 1, ram: 2, kiran: 3}"/>
+    {!v.Name}
+</aura:component>

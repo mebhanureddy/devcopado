@@ -1,0 +1,14 @@
+<apex:page >
+    <apex:form >
+        <apex:pageBlock title="Personal Information">
+            <apex:outputLabel >Name</apex:outputLabel>
+            <apex:inputText maxlength="20"/>
+            <apex:outputLabel >Contact Number</apex:outputLabel>
+            <apex:inputText maxlength="10"/>
+            <apex:outputLabel >Address</apex:outputLabel>
+            <apex:inputTextarea rows="3"/>
+            <apex:outputLabel >Indian citizen</apex:outputLabel> 
+            <apex:inputCheckbox />            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

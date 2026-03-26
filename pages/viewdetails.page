@@ -1,0 +1,42 @@
+<apex:page controller="Matrimony" lightningStylesheets="true">  
+	<apex:form > 
+      
+<!-- profiles -->           
+        <apex:pageBlock >	              
+			<apex:pageBlockTable value="{!profiledispList}" var="pro">
+                
+            <apex:column headerValue="Photo">
+                <apex:image url="{!pro.Photo}" style="width:100px" />
+            </apex:column>
+                     
+            <apex:column headerValue="Name">
+                     <apex:outputText value="{!pro.Name}"/> 
+            </apex:column>
+            <apex:column headerValue="Occupation">
+                <apex:outputText value="{!pro.Occupation}"/>
+            </apex:column> 
+            <apex:column headerValue="Location">
+                <apex:outputText value="{!pro.Location}"/>
+            </apex:column> 
+                
+	</apex:pageBlockTable>
+            
+               
+ <!-- Buttons -->     
+            <style>
+            #fonttext
+                {
+            
+            font:Salesforcesans;
+            color:black;
+            
+        		}
+    		</style>
+       <apex:pageBlockButtons location="top" style="float:center">  <h1 id="fonttext" style="float:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWAYAMVARAM</h1><br/>
+         <apex:commandButton value="myprofile" action="{!myprofile}" />
+         <apex:commandButton value="logout" action="{!logout}" />
+      </apex:pageBlockButtons> 
+	</apex:pageBlock>
+   
+   	</apex:form>
+</apex:page>

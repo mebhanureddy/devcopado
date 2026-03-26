@@ -1,0 +1,14 @@
+<aura:component controller="datatabledisplay" implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="phonerecs" type="Phone__c[]" default=""/>
+    <aura:attribute name="Lists" type="List"/>
+    <aura:attribute name="recList" type="List" default=""/>
+    <aura:attribute name="selected" type="string"/>
+    <aura:attribute name="watchrecs" type="Watch__c[]" default=""/>
+    <aura:attribute name="isOpen" type="Boolean"/>
+    <aura:attribute name="fields" type="String[]" default="" />
+    <aura:handler name="init" value="{!this}" action="{!c.help}"/>
+    <lightning:datatable data="{!v.recList}"
+                         columns="{!v.Lists}"
+                         hideCheckboxColumn="false"
+                         keyField="id"/>
+</aura:component>

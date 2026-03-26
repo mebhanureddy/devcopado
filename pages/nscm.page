@@ -1,0 +1,26 @@
+<!--<apex:page standardController="Profile__c"  extensions="ContactListController">
+<apex:form >
+ <apex:pageBlock title="All Dtp">
+ <apex:pageblockTable value="{!mydtpList}" var="item">
+ <apex:column value="{!item.Name}"/> 
+ <apex:column value="{!item.Phone__c}"/> 
+ <apex:column value="{!item.Annual_Income__c}"/> 
+  
+</apex:pageblockTable>
+ </apex:pageBlock> 
+ </apex:form>
+</apex:page>-->   
+
+<apex:page standardController="Profile__c" >  
+    <apex:form >      
+
+      
+     <apex:pageBlock title="Profile Details">
+    <apex:pageBlockSection title="Profile__c Information" Columns="2" collapsible="False">
+    <apex:inputField value="{!Profile__c.Name}"/>
+    <apex:inputfield value="{!Profile__c.Phone__c}"/>
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+   
+    </apex:form>
+</apex:page>

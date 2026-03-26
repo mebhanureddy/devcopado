@@ -1,0 +1,18 @@
+<apex:page title="India" >
+  <apex:pageBlock title="City">
+      <apex:pageBlockSection title="Hyderabad">
+           <apex:pageBlockSectionItem >
+       		 Hitech City  <br/>
+    		 Madhapur       <br/>
+             Banjara Hills
+           </apex:pageBlockSectionItem>
+       </apex:pageBlockSection>
+       <apex:pageBlockSection title="Bangalore">
+           <apex:pageBlockSectionItem >
+             Jaya Nagar  <br/>
+             BTM Layout  <br/>
+             Koramangala
+           </apex:pageBlockSectionItem>
+       </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page standardController="Contact" recordSetVar="crecs">
+	<apex:form >
+    	<apex:pageBlock title="Records" >
+        	<apex:pageBlockSection >
+                <apex:pageBlock title="Contacts list">
+            	<apex:pageBlockTable value="{!crecs}" var="c">
+                    <apex:column >
+                    	<apex:commandLink value="{!c.name}">
+                   
+                    		<apex:param name="ContactId" value="{!c.Id}"/>
+                        </apex:commandLink>    
+                        </apex:column>
+                </apex:pageBlockTable>
+                    </apex:pageBlock>
+                <apex:pageblock title="Contacts Detail">
+                	<apex:detail subject="{!$CurrentPage.parameters.ContactId}"/>
+                </apex:pageblock>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

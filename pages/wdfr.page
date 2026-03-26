@@ -1,0 +1,8 @@
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:pageBlock title="List of Accounts">
+        <apex:dataList value="{!items}" var="i">
+            <apex:outputText value="{!i.name}"></apex:outputText>
+            <apex:outputText value="{!i.industry}"></apex:outputText>
+        </apex:dataList>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,15 @@
+<aura:component controller="Account_Contact_Event">
+    <aura:registerEvent name="abc" type="c:Account_Contact_Event"/>
+    <aura:attribute name="Name" type="string"/>
+    <aura:attribute name="Phone" type="string"/>
+    <aura:attribute name="Industry" type="string"/>
+    <aura:attribute name="recId" type="string"/>
+    ACCOUNT
+    <lightning:input label="Name" value="{!v.Name}"/>
+    <lightning:input label="Phone" value="{!v.Phone}"/>
+    <lightning:input label="Industry" value="{!v.Industry}"/>
+    <br/><br/>
+    <lightning:button label="Submit" onclick="{!c.callMe}"/>
+    The Record ID is======>  {!v.recId}
+    
+</aura:component>

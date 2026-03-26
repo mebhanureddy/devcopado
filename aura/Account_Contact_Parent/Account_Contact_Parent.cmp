@@ -1,0 +1,15 @@
+<aura:component >
+   <!-- <aura:attribute name="LastName" type="string" />
+    <aura:attribute name="FirstName" type="string" />
+    <aura:attribute name="Phone" type="string" />
+    <aura:attribute name="flag" type="boolean" default="true" />
+	<div>
+        <c:Account_Contact />
+        <aura:if isTrue="{!flag}">
+            <lightning:input label="Last Name" />
+            <lightning:input label="First Name" />
+            <lightning:input label="Phone" />
+            <lightning:button label="Contact" onclick="{!c.callMe}" />
+        </aura:if>
+    </div> -->
+</aura:component>

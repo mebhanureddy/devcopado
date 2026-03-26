@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:handler name="abc" event="c.Enent_one" action="{!c.invoke}" />
+    <c.Enent_one_Child_1 />
+</aura:component>

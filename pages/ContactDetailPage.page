@@ -1,0 +1,16 @@
+<apex:page controller="ContactListController">
+	<apex:form >
+		<apex:pageBlock id="pageBlock1">
+			<apex:pageBlockTable value="{!contacts}" var="con">
+				<apex:column value="{!con.Name}"/>
+				<apex:commandButton value="Goto DetailPage" action="{!gotoContactDetailPage}" reRender="pageBlock1">
+					<apex:param name="contactid" value="{!con.Id}" assignTo="{!contactId}"/>
+				</apex:commandButton>
+			</apex:pageBlockTable>
+			<apex:pageBlockSection title="Contact Details" columns="2" rendered="{!showDetails}" >
+				<apex:iframe src="{!pageRef}" scrolling="true" width="1000px;">
+				</apex:iframe>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page controller="yearsclassvfff">
+    <apex:pageBlock title="Response employes">
+    	<apex:pageBlockTable value="{!years}" var="y">
+            <apex:column value="{!y}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

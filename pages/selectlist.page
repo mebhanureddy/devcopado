@@ -1,0 +1,20 @@
+<apex:page title="Vehicles">
+   <apex:form >
+    <apex:pageBlock title="Cars">
+    	<apex:pageBlockSection title="Maruti">
+			<apex:pageBlockSectionItem >
+                <apex:outputLabel > Select Varient </apex:outputLabel>   
+                <apex:selectList size="1" >
+                    <apex:selectOption itemLabel="Swift VDI" itemValue=""></apex:selectOption> <br/>
+                    <apex:selectOption itemLabel="Swift ZDI" itemValue=""></apex:selectOption><br/>
+                    <apex:selectOption itemLabel="Swift ZDI+" itemValue=""></apex:selectOption><br/>
+                    <apex:selectOption itemLabel="Brezza VDI" itemValue=""></apex:selectOption><br/>
+                    <apex:selectOption itemLabel="Brezza ZDI" itemValue=""></apex:selectOption><br/>
+                    <apex:selectOption itemLabel="Brezza ZDI+" itemValue=""></apex:selectOption><br/>
+                    <apex:selectOption itemLabel="Baleno ZDI" itemValue=""></apex:selectOption>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>        	
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,23 @@
+<aura:component >
+    <aura:attribute name="boatTypes" type="String" description="List of Boat Type names" />
+    <aura:attribute name="search" type="string" default=""/>
+    <aura:attribute name="New" type="string" default=""/>
+    
+    
+    <div class="c-container">
+        <lightning:layout verticalAlign="stretch" multipleRows="true" horizontalAlign="spread">
+            <lightning:layoutItem flexibility="auto" padding="horizontal-medium" class="custom-box">
+                <lightning:select name="type" label="All Types">
+                    <option value="">All Types</option>
+                    <aura:iteration items="{!v.boatTypes}" var="bt">
+                        <option value="{!bt}" text="{!bt}" />  
+                    </aura:iteration>
+                </lightning:select>
+                <lightning:button label="Search" name="Search_button" class="slds-button slds-button_brand" onclick="{!c.searchbutton}" />
+                <lightning:button label="New" title="Neutral action" class="slds-button slds-button_neutral" onclick="{!c.createrecord }"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+            </lightning:layoutItem>  
+        </lightning:layout>
+    </div>
+</aura:component>

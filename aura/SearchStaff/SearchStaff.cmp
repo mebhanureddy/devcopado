@@ -1,0 +1,153 @@
+<aura:component controller="searchStaffController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"  access='global' >   
+  
+    
+    
+    <aura:attribute name="isNew" type="Boolean"/>
+    <aura:attribute name="headerText" type="String"/>
+    <aura:attribute name="objId" type="Id"/>
+    <aura:attribute name="isView" type="Boolean"/>
+    <aura:attribute name="searchResult" 	type="List" description="use for store and display staff list return from server"/>
+    <aura:attribute name="searchKeyword" type="String" description="use for store user search input"/>
+    <aura:attribute name="infoMessage"   type="boolean" default="false" description="use for display no record found message"/>
+    <aura:attribute name="numberOfRecord" type="integer" default="0" description="use for display Number of records"/>    
+    <aura:registerEvent name="staffEvent" type="c:staffViewCompEvent"/>
+    
+    
+    <lightning:layout class="slds-page-header slds-page-header-object-home" horizontalAlign="spread" >
+        
+        
+        
+        <lightning:layoutItem padding="horizontal-medium">
+            
+            <lightning:icon iconName="standard:people" alternativeText="Staff"/>
+            <div class="page-section page-header">
+                <b><h1 class="slds-text-heading-label">Staff</h1></b>
+                <b><h2 class="slds-text-heading-medium">{!v.headerText}</h2></b>
+            </div>
+            
+            
+        </lightning:layoutItem>
+        
+        
+        
+        
+        
+        <lightning:layoutItem padding="horizontal-large">
+            
+            <div class="slds-form-element">
+                <button type="button" onclick="{!c.createNew}" class="slds-button slds-button-brand">New</button>
+                <button type="button" onclick="{!c.searchShow}" class="slds-button slds-button-brand">Search</button>
+            </div>
+            
+        </lightning:layoutItem>
+        
+    </lightning:layout>
+    
+    
+ 
+    <lightning:card title="">
+        
+        <aura:if isTrue="{!v.isNew}">
+            <c:CreateStaffRecord ></c:CreateStaffRecord>
+        </aura:if>
+        
+        
+        
+        <aura:if isTrue="{!and(!v.isNew,!v.isView)}">
+            
+            <div class="slds-m-around-large">
+                <form class="slds-form-inline">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="search"></label>
+                        <div class="slds-form-element__control">
+                            <ui:inputText aura:id="searchId" class="slds-input" value="{!v.searchKeyword}" required="true" placeholder="Type here..."/>
+                        </div>
+                    </div>
+                    <button type="button" onclick="{!c.Search}" class="slds-button slds-button-brand">Find Results</button>    
+                </form>
+                <br/>
+                <table class="slds-table slds-table-bordered slds-table-cell-buffer">
+                    <thead>
+                        <tr class="slds-text-title-caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Id">Record Number</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="First Name">First Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Middle Name">Middle Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Last Name">Last Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Phone">Phone</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Email">Email</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Status">Status</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Staff Type">Staff Type</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:if isTrue="{!v.infoMessage}">
+                            <div class="slds-text-color-error"> No Result Found...</div>
+                        </aura:if>
+                        <!-- display all records of searchResult attribute by aura:iteration -->
+                        <aura:iteration items="{!v.searchResult}" var="staff">
+                            <tr>
+                                <td>
+                                    <div ><a onclick = "{!c.navigateToStaff}" id="{!staff.Id}" target="_blank">{!staff.Name}</a> </div>
+                                </td>
+                                <td>
+                                    <div >{!staff.First_Name__c}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{!staff.Middle_Name__c}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{!staff.Last_Name__c}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{!staff.Phone__c}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{!staff.Email__c}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{!staff.Status__c }</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">{!staff.Staff_Type__c }</div>
+                                </td>
+                                
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+                
+                
+                <aura:if isTrue="{!v.numberOfRecord>0}">
+                    <span class="slds-badge">Total: {!v.numberOfRecord}</span> 
+                    
+                    <aura:set attribute="else">
+                        <span class="slds-float_right">Total: 0</span> 
+                    </aura:set>
+                    
+                </aura:if> 
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.isView}">
+            <c:StaffRecordView recordId="{!v.objId}"/>
+        </aura:if>
+        
+    </lightning:card>
+
+</aura:component>
