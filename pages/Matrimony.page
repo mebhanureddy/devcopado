@@ -1,0 +1,345 @@
+<apex:page sidebar="false" showHeader="True" title="SWAYAMVARAM MATRIMONY"  Controller="Matrimony"  lightningStylesheets="true">
+    <style type="text/css">
+        .right{
+        width:1280px;
+        float:right;
+        background:red;kavya123
+        }
+        .left{
+        width:240px;
+        overflow:hidden;
+        }
+        #h1{
+        font-size:25px; 
+        font:Salesforcesans;
+        color:white;
+        text-align:center;
+        background-color: #FF8C00;
+        }
+        #h3{
+        font-size:25px; 
+        font:Salesforcesans;
+        color:white;
+        text-align:left;
+        background-color: #FF8C00;
+        #center{
+         text-align:left;
+        float
+        }
+       
+        .customPopup {
+        background-color: white;
+        border-style: solid;
+        border-width: 2px;
+        left: 20%;
+        padding: 10px;
+        position: absolute;
+        z-index: 9999;
+        /* These are the 3 css properties you will need to tweak so the pop 
+        up displays in the center of the screen. First set the width. Then set 
+        margin-left to negative half of what the width is. You can also add 
+        the height property for a fixed size pop up.*/
+        width: 500px;
+        top: 20%;
+        }
+        
+        .disabledTextBox {
+        background-color: white;
+        border: 1px solid;
+        color: black;
+        cursor: default;
+        width: 90px;
+        display: table;
+        padding: 2px 1px;
+        text-align:right;
+        }   
+        
+        .closeButton {
+        float: right;
+        }
+    </style> 
+    
+    <apex:form >      										    		  <!-- REGISTRATION  -->
+        
+        <apex:pageBlock id="Registrationform" rendered="{!Registrationform}">  
+            <h1  id="h1" >SWAYAMVARAM </h1>  
+            <!-- Fields -->
+            <apex:pageBlockSection >
+                <apex:inputField value="{!user_Obj.Name}" required="true"/>  
+                <apex:inputField value="{!user_Obj.MailID__c}" />
+                <apex:inputField value="{!user_Obj.Password__c}" />
+                <apex:inputField value="{!user_Obj.Gender__c}" />
+                <apex:inputField value="{!user_Obj.Religion__c}" required="true"/>
+                <apex:inputField value="{!user_Obj.Caste__c}" />
+                <apex:inputField value="{!user_Obj.Mother_Tongue__c}" />
+                <apex:inputField value="{!user_Obj.Phone__c}" html-maxlength="10"/>
+                <apex:inputField value="{!user_Obj.Date_of_Bith__c}" />
+                <apex:inputField value="{!user_Obj.Height__c}" />
+                <apex:inputField value="{!user_Obj.Education__c}" style="width:120px;height:100px;"/>
+                <apex:inputField value="{!user_Obj.Occupation__c}" required="true"/>
+                <apex:inputField value="{!user_Obj.Annual_Income__c}" />
+                <apex:inputField value="{!user_Obj.Location__c}" required="true"/>
+                <apex:inputField value="{!user_Obj.Assets_Value__c}" />
+                <apex:inputField value="{!user_Obj.Eating_habit__c}" />
+                <apex:inputField value="{!user_Obj.Drinking_Habit__c}" />
+                <apex:inputField value="{!user_Obj.Smoking__c}" />
+                <apex:inputField value="{!user_Obj.Address__c}" />
+                <apex:inputField value="{!user_Obj.Languages_Known__c}" style="width:120px;height:100px;"/>
+                <apex:inputField value="{!user_Obj.Photo__c}" style="width:50px;height:50px;" required="true"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!Register}" style="text-align:center;color:white;font:Salesforcesans;font-size:15px; background-color:#FF8C00;" />
+                <apex:commandButton value="Reset" onclick="this.form.reset();return false;" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+                <apex:commandButton value="Back to Login" action="{!backloginPage}" immediate="true" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <!------------------------------------------------------------------Login Page -->
+        <apex:pageBlock id="LoginDetails" rendered="{!LoginDetails}">.
+            <h1  id="h1" >SWAYAMVARAM </h1>  
+            <center>  
+                <apex:panelGrid columns="2" style="margin-top:1em;">
+                    <p><b>User Name </b><br />
+                        <apex:inputField id="MailID__c" value="{!user_Obj.MailID__c}" required="true"/>
+                        <b> Password </b><br />
+                        <apex:inputSecret value="{!user_Obj.Password__c}" required="true" /> <br/> </p>
+                    
+                </apex:panelGrid>
+                <div style="text-align:center;" > 
+                    <apex:commandButton style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;" value="Login" action="{!login}" />
+                    <apex:commandButton style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;" value="New user" action="{!newuser}" immediate="true" />
+                </div>
+            </center>
+        </apex:pageBlock>
+        <!-------------------------------------------------------------------------------photo------------------------------>
+         <apex:pageBlock rendered="{!Show_images}">
+                <marquee >
+                    <apex:image value="{!IMAGEPROXYURL('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSujQgYm6S3WZhrNBltiIe9I90sqHpibakRL0XxTIhBOGyEN5gx')}" width="550px" height="450px"/>
+                    <apex:image value="{!IMAGEPROXYURL('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSzpB80utOuf6dYkwG_xbSyZn6kjuMDJ84s9_suU8_tkBarV0RI')}" width="550px" height="450px"/>
+                    <apex:image value="{!IMAGEPROXYURL('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR5Lb9_4XxDO3l1qfJDcX4t2rVfSZtzlgnViRwMV_ddUO37scwO')}" width="550px" height="450px"/>
+                    <apex:image value="{!IMAGEPROXYURL('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBjpslyjQzFZAGV8VF5t5K_B3tomt6z_Fpynkfnzx5gtWJy4ZA')}" width="550px" height="450px"/>  
+                    <apex:image value="{!IMAGEPROXYURL('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSt7PPyxqUnKEdr-k5n8TJ5GF-a4f3jYSgyBtz7-DLSaiUpTPg5')}" width="550px" height="450px"/>
+                </marquee>
+            </apex:pageBlock>
+        
+        <!----------------------------------------------------------------------------------------- HOMEPAGE  --> 
+        <apex:pageblock rendered="{!UserDetails}">
+            <h1  id="h3" >SWAYAMVARAM </h1>  
+            <div align="right">
+                <apex:commandButton value="myprofile" action="{!myprofile}" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+                <apex:commandButton value="Back" action="{!backloginPage}" immediate="true" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+                <apex:commandButton value="Subscribe" action="{!subbutton}" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+                <apex:commandButton value="logout" action="{!logout}" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+            </div>  
+            <div class="right">
+                <apex:pageBlockSection >                                                
+                    <apex:pageBlockTable value="{!profiledisplayList}" var="pro" style="width:980px;" columnsWidth="20%,20%,20%,15%,10%,15%">
+                        <apex:column headerValue="Photo" >
+                            <apex:image url="{!pro.Photo}" style="width:130px; height: 130px"></apex:image>
+                        </apex:column>
+                        <apex:column headerValue="Name" style="font:Salesforcesans;font-size:15px;">
+                            <apex:outputText value="{!pro.Name}" />  
+                        </apex:column>
+                        <apex:column headerValue="Occupation" style="font:Salesforcesans;font-size:15px;" >
+                            <apex:outputText value="{!pro.Occupation}"/>
+                        </apex:column> 
+                        <apex:column headerValue="Location"  style="font:Salesforcesans;font-size:15px;">
+                            <apex:outputText value="{!pro.Location}"/>
+                        </apex:column> 
+                        <apex:column headerValue="Caste"  style="font:Salesforcesans;font-size:15px;">
+                            <apex:outputText value="{!pro.Caste}"/>
+                        </apex:column>
+                        <apex:column style="border:1px Gray;text-align:center;">
+                            <div style="font:Salesforcesans;font-size:20px;background-color:#FF8C00;width:100px;">   
+                                <apex:commandLink value="View" action="{!View_Profile}" style="color:White;" > 
+                                    <!--  to get param-->               <apex:param value="{!pro.id}" assignTo="{!profile_Id}" name="pid" />
+                                </apex:commandLink>
+                            </div>
+                        </apex:column>
+                        <!--          <apex:column style="border:1px Gray;text-align:center;">
+<div style="font:Salesforcesans;font-size:20px;background-color:#FF8C00;width:100px;">   
+<apex:commandLink value="Send Interest" action="{!View_Profile}" style="color:White;" > 
+<!--  to get param-->           <!--    <apex:param value="{!pro.id}" assignTo="{!profile_Id}" name="pid" />
+</apex:commandLink>
+</div>
+</apex:column>-->
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </div> 
+            <!----------------------------------------------------------------Search---------------------------------->
+            <div class="left" >
+                <apex:pageBlockSection title="Search information" collapsible="false" >
+                    <apex:selectCheckboxes value="{!Occupation_Inputs}" label="Occupation" layout="pageDirection" style="border:1.5px solid LightGray;width:120px;height:100px;">
+                        <apex:selectOptions value="{!occupation}"/>
+                    </apex:selectCheckboxes><br/>
+                    <apex:selectCheckboxes value="{!Religion_Inputs}" label="Religion" layout="pageDirection" style="border:1.5px solid LightGray;width:120px;height:100px;" >
+                        <apex:selectOptions value="{!religion}" />	
+                    </apex:selectCheckboxes><br/>
+                    <apex:selectCheckboxes value="{!Caste_Inputs}" label="Caste" layout="pageDirection" style="border:1.5px solid LightGray;width:120px;height:100px;" >
+                        <apex:selectOptions value="{!caste}" />	
+                    </apex:selectCheckboxes><br/>
+                    <apex:selectCheckboxes value="{!Location_Inputs}" label="Location" layout="pageDirection" style="border:1.5px solid LightGray;width:120px;height:100px;" >
+                        <apex:selectOptions value="{!location}"/>	
+                    </apex:selectCheckboxes>
+                </apex:pageBlockSection>
+                <div location="both" align="center"> 
+                    <apex:commandButton value="Search" action="{!Filtered_Search}" style="color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;" />
+                </div>
+            </div>
+           
+        </apex:pageblock>  
+        
+        <!-- -----------------------------------------------------------------MY PROFILE  -->
+        <apex:pageBlock id="ProfileDetails" rendered="{!ProfileDetails}">
+            <h1  id="h3" >SWAYAMVARAM </h1>  
+            <div location="Top" align="Right">
+                <apex:commandButton value="Back to Home" action="{!backhomePage}" immediate="true" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+                <apex:commandButton value="UpdateDetails" action="{!SaveDetails}" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+            </div><apex:inlineEditSupport > 
+            <apex:pageBlockTable value="{!Login_User}" var="user">
+                <apex:column value="{!user.Name}"/>  
+                <apex:column value="{!user.MailID__c}" />
+                <apex:column value="{!user.Phone__c}" />
+                <apex:column value="{!user.Occupation__c}" />
+                <apex:column value="{!user.Religion__c}" />
+                <apex:column value="{!user.Location__c}" />
+                <apex:column value="{!user.Photo__c}" style="width:100px;height:150px"/> 
+            </apex:pageBlockTable></apex:inlineEditSupport>
+        </apex:pageBlock>
+        <!---------------------------------------------------View Details--------------------------------------->
+        <apex:pageBlock rendered="{!Profile_Information}">
+            <h1  id="h3" >SWAYAMVARAM </h1>  
+            <div align="center">
+                <apex:commandButton value="Back to Home" action="{!backhomePage}"  immediate="true" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+            </div>
+            <apex:pageBlockSection columns="2" >
+                <apex:outputField value="{!Profile_Search.Photo__c}" style="width:100px;height:100px"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" >
+                <apex:outputField value="{!Profile_Search.Name}"/>  
+                <apex:outputField value="{!Profile_Search.MailID__c}" />
+                <apex:outputField value="{!Profile_Search.Gender__c}" />
+                <apex:outputField value="{!Profile_Search.Religion__c}" />
+                <apex:outputField value="{!Profile_Search.Caste__c}" />
+                <apex:outputField value="{!Profile_Search.Mother_Tongue__c}" />
+                <apex:outputField value="{!Profile_Search.Phone__c}" />
+                <apex:outputField value="{!Profile_Search.Date_of_Bith__c}" />
+                <apex:outputField value="{!Profile_Search.Height__c}" />
+                <apex:outputField value="{!Profile_Search.Education__c}" />
+                <apex:outputField value="{!Profile_Search.Occupation__c}" />
+                <apex:outputField value="{!Profile_Search.Annual_Income__c}" /> 
+                <apex:outputField value="{!Profile_Search.Location__c}" />
+                <apex:outputField value="{!Profile_Search.Assets_Value__c}" />
+                <apex:outputField value="{!Profile_Search.Eating_habit__c}" />
+                <apex:outputField value="{!Profile_Search.Drinking_Habit__c}" />
+                <apex:outputField value="{!Profile_Search.Smoking__c}" />
+                <apex:outputField value="{!Profile_Search.Address__c}" />
+                <apex:outputField value="{!Profile_Search.Languages_Known__c}" />  
+            </apex:pageBlockSection>
+            <div align="center">
+                <apex:commandButton value="Back to Home" action="{!backhomePage}"  immediate="true" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+            </div>
+        </apex:pageBlock>
+        
+        <!-------------------------------------------------------aftersearch-------View Details------------------->    
+        <apex:pageblock rendered="{!UserDetailsaftersearch}">
+            <h1  id="h3" >SWAYAMVARAM </h1>  
+            <div align="right">
+                <apex:commandButton value="myprofile" action="{!myprofile}" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+                <apex:commandButton value="Back " action="{!backhomePage}" immediate="true" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+                <apex:commandButton value="logout" action="{!logout}" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+            </div>  
+            <div class="right">
+                <apex:pageBlockSection >
+                    <!----------------------------------------------------------------------------------------After search HOMEPAGE  --> 
+                    <apex:pageBlockTable value="{!SearchList}" var="pro"  style="width:980px;" columnsWidth="15%,15%,15%,10%,10%,15%,20%">
+                        <apex:column headerValue="Photo" >
+                            <apex:image url="{!pro.Photo}" style="width:130px; height: 130px"></apex:image>
+                        </apex:column>
+                        <apex:column headerValue="Name" >
+                            <apex:outputText value="{!pro.Name}" />  
+                        </apex:column>
+                        <apex:column headerValue="Occupation" >
+                            <apex:outputText value="{!pro.Occupation}"/>
+                        </apex:column> 
+                        <apex:column headerValue="Location" >
+                            <apex:outputText value="{!pro.Location}"/>
+                        </apex:column> 
+                        <apex:column style="border:1px Gray;">
+                            <div style="font:Salesforcesans;font-size:20px;background-color:#FF8C00;width:130px">   
+                                <apex:commandLink value="View" action="{!View_Profile}" style="color:White;"> 
+                                    <!--  to get param--> <apex:param value="{!pro.id}" assignTo="{!profile_Id}" name="pid" />
+                                </apex:commandLink>
+                            </div>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </div> 
+            <div class="left">
+                <apex:pageBlockSection title="Search information" collapsible="false" >
+                    <apex:selectCheckboxes id="Occupation" value="{!Occupation_Inputs}" label="Occupation" layout="pageDirection"  >
+                        <apex:selectOptions value="{!occupation}" />
+                    </apex:selectCheckboxes><br/>
+                    <apex:selectCheckboxes id="Religion" value="{!Religion_Inputs}" label="Religion" layout="pageDirection"  >
+                        <apex:selectOptions value="{!religion}" />	
+                    </apex:selectCheckboxes><br/>
+                    <apex:selectCheckboxes id="Caste" value="{!Caste_Inputs}" label="Caste" layout="pageDirection"  >
+                        <apex:selectOptions value="{!caste}" />	
+                    </apex:selectCheckboxes><br/>
+                    <apex:selectCheckboxes id="Location" value="{!Location_Inputs}" label="Location" layout="pageDirection"  >
+                        <apex:selectOptions value="{!location}" />	
+                    </apex:selectCheckboxes>
+                </apex:pageBlockSection>
+                <div location="both" align="center"> 
+                    <br/><br/><apex:commandButton value="Back to Home" action="{!backhomePage}" immediate="true" style="text-align:center;color:white;font:Salesforcesans;font-size:15px;background-color:#FF8C00;"/>
+                </div>
+            </div> 
+            
+        </apex:pageblock>  
+        <!------------------------------------------------------------------------------------------PAYMENT---------->
+        <apex:pageBlock id="Payment_Display" rendered="{!Payment_Display}">
+            <center> <H2>  Please subscribe to view details    </H2></center> 
+            <apex:pageBlockSection >
+                <apex:inputField value="{!sub_Obj.Name}"/>
+                <apex:inputField value="{!sub_Obj.Mail_id__c}"/>
+     <div style="width:50%; float:left;">
+         <apex:selectList size="1" value="{!SelectedList}">
+                    <apex:selectOption itemLabel="Payment type" itemvalue=""></apex:selectOption><br/>
+                    <apex:selectOption itemLabel="Creditcard" itemValue="Creditcard"></apex:selectOption>
+                    <apex:selectOption itemLabel="Debitcard" itemValue="Debitcard"></apex:selectOption>
+                    <apex:selectOption itemLabel="Netbanking" itemValue="Netbanking"></apex:selectOption>
+                    <apex:actionSupport event="onchange" reRender="show"/>
+                </apex:selectList><br/><br/>
+                </div>
+            </apex:pageBlockSection>
+            <div class="sub_Obj">
+                <apex:outputPanel id="show">
+                    <apex:pageBlockSection rendered="{!IF(OR(SelectedList == 'Creditcard',SelectedList == 'Debitcard'),true, false)}">
+                        <apex:inputField value="{!sub_Obj.Card_Number__c}" html-maxlength="16" /><br/>
+                        <apex:inputField value="{!sub_Obj.CVV__c}" html-maxlength="3" /><br/>
+                        <apex:inputField value="{!sub_Obj.Expiry_Date__c}" /><br/>
+                    </apex:pageBlockSection>
+                    <center>         
+                        <apex:pageBlock rendered="{!IF(SelectedList == 'Netbanking', true, false)}" >
+                            <apex:selectList size="1" value="{!SelectedList}">
+                                <apex:selectOption itemLabel="Choose Bank" itemvalue=""></apex:selectOption>
+                                <apex:selectOption itemLabel="HDFC" itemValue="HDFC" />
+                                <apex:selectOption itemLabel="ICICI" itemValue="ICICI"/>
+                                <apex:selectOption itemLabel="KOTAK" itemValue="KOTAK"/>
+                                <apex:actionSupport event="onchange" reRender="show"/>
+                            </apex:selectList>
+                        </apex:pageBlock>
+                    </center> 
+                    <apex:pageBlockSection rendered="{!IF(OR(SelectedList == 'HDFC',SelectedList == 'ICICI',SelectedList == 'KOTAK'), true, false)}" >
+                        <apex:inputField value="{!sub_Obj.Username__c}" /><br/>
+                        <apex:inputField value="{!sub_Obj.Password__c}" /><br/>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+            </div>
+            <div location="both" align="center">
+                <apex:commandButton value="Proceed to payment" action="{!payment}" style="text-align:center;color:white;font:Salesforcesans;font-size:15px; background-color:#FF8C00;"/>
+                <apex:commandButton value="Cancel" action="{!backhomePage}" immediate="true" style="text-align:center;color:white;font:Salesforcesans;font-size:15px; background-color:#FF8C00;"/>
+                <apex:pageMessages rendered="{!Apex_message}"/>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

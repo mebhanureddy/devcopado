@@ -1,0 +1,15 @@
+<apex:page controller="callingmethodapex">
+    <apex:form >
+        <div align="center"> 
+          <apex:pageBlock >                           
+            <apex:pageBlockButtons location="top">
+            <apex:commandButton value="OK" action="{!two}" />
+            </apex:pageBlockButtons>
+            <apex:outputLabel >Name: {!name}</apex:outputLabel> <br/>
+          	   <apex:outputLabel >Employee id: {!id}</apex:outputLabel><br/>
+            	<apex:outputLabel >city: {!city}</apex:outputLabel><br/>
+          	   <apex:outputLabel >Employee company: {!company}</apex:outputLabel>
+        </apex:pageBlock>    	
+      </div>
+    </apex:form>
+</apex:page>

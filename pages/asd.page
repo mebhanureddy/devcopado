@@ -1,0 +1,31 @@
+<apex:page controller="pppppppp" lightningStylesheets="true">
+	<apex:form > 
+        
+                 
+         
+
+	<apex:pageBlock >	 
+	<apex:pageBlockTable value="{!profiles}" var="pro">
+            <apex:column headerValue="Photo">
+                    <apex:image url="{!photo_url}" style="width:100px" />
+            </apex:column>
+            <apex:column headerValue="Name">
+                     <apex:outputText value="{!pro.Name}"/>
+            </apex:column>
+            <apex:column headerValue="Photo">
+                <apex:outputText value="{!pro.Occupation__c}"/>
+            </apex:column>
+            <apex:column headerValue="Photo">
+                <apex:outputText value="{!pro.Location__c}"/>
+            </apex:column>
+	</apex:pageBlockTable>
+        
+         <apex:pageBlockButtons location="bottom" style="float:center">
+         <apex:commandButton value="logout" action="{!logout}" />
+          <apex:commandButton value="myprofile" action="{!gopage}" />
+          </apex:pageBlockButtons>
+        
+
+	</apex:pageBlock>
+   	</apex:form>
+</apex:page>

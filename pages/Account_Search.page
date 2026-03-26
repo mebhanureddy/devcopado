@@ -1,0 +1,14 @@
+<apex:page controller="Search_Account_Records" >
+    <apex:form >
+        <apex:outputLabel title="Enter Name" />
+        <apex:inputText value="{!searchkey}" />
+        <apex:commandButton value="Search Records" action="{!search}"/>
+        <apex:commandButton value="Clear" action="{!clear}"/>
+    	<apex:pageBlock title="Search Result">
+            <apex:pageBlockTable value="{!acc}" var="a" >
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.phone}" />
+            </apex:pageBlockTable>        	
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

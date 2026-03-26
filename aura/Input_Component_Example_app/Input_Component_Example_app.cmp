@@ -1,0 +1,3 @@
+<aura:component >
+    <c:Input_Component_Example/>
+</aura:component>

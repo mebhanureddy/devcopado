@@ -1,0 +1,7 @@
+<aura:component controller="Apex_C2" >
+    <aura:attribute name="result" type="string"/>
+    <lightning:input label="firstname" aura:id="firstname"/>
+    <lightning:input label="lastname" aura:id="lastname"/>
+    <lightning:button label="Submit" onclick="{!c.show}"/>
+The name is {!v.result}    
+</aura:component>

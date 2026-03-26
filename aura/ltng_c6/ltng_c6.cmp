@@ -1,0 +1,16 @@
+<aura:component controller="Apex_C5">
+    <aura:attribute name="name" type="string"/>
+    <aura:attribute name="phone" type="string"/>
+    <aura:attribute name="industry" type="string"/>
+    <aura:attribute name="result" type="string"/>
+    <lightning:input label="Name" value="{!v.name}"/>
+    <lightning:input label="Phone" value="{!v.phone}"/>
+    <lightning:select  label="Industry" value="{!v.industry}">
+        <option value="">Select option</option>
+        <option value="1">Hot</option>
+        <option value="2">Warm</option>
+        <option value="3">Cold</option>
+    </lightning:select>    
+    <lightning:button label="Submmit"  onclick="{!c.show}"/>
+    {!v.result}
+</aura:component>

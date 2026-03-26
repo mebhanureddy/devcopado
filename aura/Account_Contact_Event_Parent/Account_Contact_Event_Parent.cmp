@@ -1,0 +1,25 @@
+<aura:component controller="Account_Contact_Event">
+    <aura:attribute name="recordid" type="string"/>
+    <aura:attribute name="contactid" type="string"/>
+    <aura:handler name="abc" event="c:Account_Contact_Event" action="{!c.show}"/>
+    <aura:attribute name="LastName" type="string"/>
+    <aura:attribute name="Phone" type="string"/>
+    <aura:attribute name="flag" type="boolean" default="false"/>
+    <div class="slds-grid slds-grid_align-center slds-p-top_xx-large ">
+        <div class="slds-col ">
+            <c:Account_Contact_Event_C1/>
+        </div>
+        <div class="slds-col">
+            <span>
+                <aura:if isTrue="{!v.flag}">
+                    CONTACT
+                    <lightning:input label="Last Name" value="{!v.LastName}" />
+                    <lightning:input label="Phone" value="{!v.Phone}"/>
+                    <br/><br/>
+                    <lightning:button label="Submit" onclick="{!c.callMe}"/>
+                    Contact recordID is ============>{!v.contactid}
+                </aura:if>
+            </span>
+        </div>
+    </div>
+</aura:component>

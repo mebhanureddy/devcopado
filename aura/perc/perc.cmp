@@ -1,0 +1,5 @@
+<aura:component >
+     <aura:attribute name="name" type="string" access="public" default="Bhanu"/>
+    Welcome{!v.name}<br/>
+	<lightning:button value="Component" label="Component" onclick="{!c.doclick}"/>
+</aura:component>

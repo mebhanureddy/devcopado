@@ -1,0 +1,11 @@
+<apex:page standardController="Account" recordSetVar="reco">
+    <apex:pageBlock title="Table of records">
+        <apex:dataTable value="{!reco}" var="r">
+			<apex:column value="{!r.name}" headerValue="Name"/>
+            <apex:column value="{!r.Industry}" headerValue="Industry"/>
+            <apex:column value="{!r.Rating}" headerValue="Rating"/>
+            <apex:column value="{!r.phone}" headerValue="Phone"/>
+            <apex:column value="{!r.annualrevenue}" headerValue="Annual Revenue"/>
+        </apex:dataTable>
+    </apex:pageBlock>
+</apex:page>

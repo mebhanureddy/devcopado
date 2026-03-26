@@ -1,0 +1,23 @@
+<apex:page standardController="Profile__c" recordSetVar="Profiles__c" lightningStylesheets="true" extensions="Matrimony">
+    <apex:form > 
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!Profiles__c}" var="profile"  >
+                <apex:column value="{!profile.Photo__c}" />                
+                <apex:column value="{!profile.Name}"/>
+                <apex:column value="{!profile.Religion__c}"/>
+                <apex:column value="{!profile.Occupation__c}"/>
+  				<apex:column value="{!profile.Location__c}"/>
+            </apex:pageBlockTable>  
+          <apex:pageBlockButtons location="bottom" style="float:center">
+       			  <apex:commandButton value="logout" action="{!logout}" />
+        		  <apex:commandButton value="myprofile" action="{!gopage}" />
+          </apex:pageBlockButtons>
+        </apex:pageBlock>
+			<div align="center">
+                <apex:commandButton value="First" action="{!first}"  />                 
+                <apex:commandButton value="Last" action="{!last}" /> 
+            	 <apex:commandButton value="Next" action="{!next}"  />                 
+                <apex:commandButton value="Previous" action="{!previous}" /> 
+            </div> 
+    </apex:form>
+</apex:page>

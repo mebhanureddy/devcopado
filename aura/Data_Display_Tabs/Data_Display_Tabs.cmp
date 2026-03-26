@@ -1,0 +1,35 @@
+<aura:component controller="Data_Display_Tabs" >
+    <aura:attribute name="data" type="object"/>
+    <aura:attribute name="reccid" type="string"/>
+    <aura:attribute name="flag" type="boolean" default="true"/>
+    <aura:attribute name="columns" type="list" default="[{label:'Name',fieldName:'Name',type:'text'},
+                                                        {label:'Account ID',type:'button',typeAttributes:{label:{fieldName:'Id'},variant:'Brand'}}]"/>
+    <aura:attribute name="columns1" type="list" default="[{label:'Name',fieldName:'Name',type:'text'},
+                                                         {label:'Account Name',type:'button',typeAttributes:{label:{fieldName:'AName'},variant:'Brand'}}]"/>
+    <lightning:tabset>
+        <lightning:tab label="Accounts" onactive="{!c.accshow}" id="one">
+            <lightning:layout class="slds-col slds-size_2-of-3">
+                <lightning:datatable keyField="id"
+                                     data="{!v.data}" 
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"
+                                     onrowaction="{!c.accrf}"/>
+            </lightning:layout>
+            <aura:if isTrue="{!v.flag}">
+                <lightning:layout class="slds-col slds-size_1-of-3">
+                    <lightning:recordForm  recordId="{!v.reccid}"
+                                          mode="view"
+                                          columns="5"
+                                          objectApiName="Account"
+                                          />
+                </lightning:layout>
+            </aura:if>
+        </lightning:tab>
+        <lightning:tab label="contacts" onactive="{!c.conshow}" id="two">
+            <lightning:datatable keyField="id"
+                                 data="{!v.data}" 
+                                 columns="{!v.columns1}"
+                                 hideCheckboxColumn="true"/>
+        </lightning:tab>
+    </lightning:tabset>
+</aura:component>

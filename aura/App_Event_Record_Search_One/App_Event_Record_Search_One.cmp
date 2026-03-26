@@ -1,0 +1,33 @@
+<aura:component controller="App_Event_Record_Search">
+    <aura:registerEvent name="appEvent" type="c:App_Event_ACC_Record_Search"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    <aura:attribute name="searchParam" type="string" />
+    <aura:attribute name="data" type="object" />
+    <aura:attribute name="accid" type="string" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="flag" type="Boolean" default="false" />
+    <!--<div class="slds-box slds-box_xx-small">    </div>-->
+    <center>
+        <lightning:layoutItem size="3" >
+            <lightning:input type="search" label="Account Related Search" value="{!v.searchParam}" onchange="{!c.search}"/>
+        </lightning:layoutItem>
+    </center>
+    <div class="slds-grid slds-grid_align-center">
+        <div class="slds-col">
+            <aura:if isTrue="{!v.flag}">
+                <lightning:datatable keyField="id"
+                                     data="{!v.data}"
+                                     columns="{!v.columns}"
+                                     hideCheckboxColumn="true"
+                                     maxColumnWidth="200"
+                                     onrowaction="{!c.show}"/>
+            </aura:if>
+        </div>
+        <div class="slds-col">
+            <c:App_Event_ACC_Record_Search_Two/>
+        </div>
+        <div class="slds-col">
+            <c:App_Event_Record_Search_Three/>
+        </div>
+    </div>
+</aura:component>

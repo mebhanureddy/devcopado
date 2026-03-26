@@ -1,0 +1,15 @@
+<aura:component controller="datatabledisplay"
+               implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+   <aura:attribute name="Listofrecords" type="List"/>
+   <aura:attribute name="schoolrecList" type="List" default=""/>
+   <aura:attribute name="selected" type="string"/>
+   <aura:attribute name="teacherrecord" type="Boolean" default="false"/>
+   <aura:attribute name="teacherrec" type="Boolean" default="false"/>
+   <aura:attribute name="DetailPage" type="Boolean" default="false"/>
+   <aura:handler name="init" value="{!this}" action="{!c.school}"/>
+   <lightning:datatable data="{!v.schoolrecList}"
+                        columns="{!v.Listofrecords}"
+                        hideCheckboxColumn="false"
+                        onrowaction="{!c.gettingid}"
+                        keyField="id"/>
+</aura:component>

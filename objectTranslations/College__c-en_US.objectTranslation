@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>College</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Colleges</value>
+    </caseValues>
+    <fields>
+        <label><!-- CSE --></label>
+        <name>CSE__c</name>
+    </fields>
+    <fields>
+        <label><!-- ECE --></label>
+        <name>ECE__c</name>
+    </fields>
+    <fields>
+        <label><!-- IT --></label>
+        <name>IT__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Students --></label>
+        <name>No_of_Students__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

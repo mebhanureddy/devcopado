@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="input" type="Integer"/>
+    <aura:attribute name="input1" type="Integer"/>
+
+    <lightning:input type="Number" label="Enter a number" value="{!v.input}"/>    
+    <lightning:input type="Number" label="Enter a number" value="{!v.input1}"/>
+    Addition of {!v.input} and {!v.input1} is 
+    {!(v.input)+(v.input1)}
+
+</aura:component>

@@ -1,0 +1,24 @@
+<aura:component >
+    <lightning:layout multipleRows="true" >
+        <lightning:layoutItem size="4" padding="around-small">
+            <div class="slds-box">
+                <a href="https://en.wikipedia.org/wiki/Venkatesh_Daggubati " target="_blank"><center>Venkatesh D</center></a>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="4" padding="around-small">
+            <div class="slds-box">
+                <a href="https://www.oakridge.in/">School</a>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="4" padding="around-small">
+            <div class="slds-box">
+                <p>City</p>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="4" padding="around-small">
+            <div class="slds-box">
+                <p>State</p>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

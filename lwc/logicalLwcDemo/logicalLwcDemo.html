@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Logical Operations" icon-name="custom:custom8">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+            {greeting}
+            </lightning-layout-item>
+        <template if:true={message}>                    
+            <lightning-layout-item padding="around-small">
+                {message}
+            </lightning-layout-item>
+        </template>   
+        <lightning-layout-item padding="around-small">
+            <template for:each = {contacts} for:item="contact" for:index="index">
+                <p key={contact.Id}> {index} </p>
+                {contact.name}
+                {contact.Id}
+            </template>
+        </lightning-layout-item>   
+        </lightning-layout>
+    </lightning-card>
+</template>

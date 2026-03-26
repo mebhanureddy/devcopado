@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Top X Designation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Top X Designation</value>
+    </caseValues>
+    <fields>
+        <label><!-- Document Attached --></label>
+        <name>Document_Attached__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Contract Flow Down</masterLabel>
+            <translation><!-- Contract Flow Down --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Handoff</masterLabel>
+            <translation><!-- Handoff --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

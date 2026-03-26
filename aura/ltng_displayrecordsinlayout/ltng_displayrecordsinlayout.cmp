@@ -1,0 +1,31 @@
+<aura:component controller="Apex_AccDispLayout">
+    <aura:attribute name="data" type="Account"/>
+    <aura:attribute name="columns" type="list"/>
+    <aura:attribute name="recId" type="string"/>
+    <aura:attribute name="flag" type="boolean" default="false"/>
+    <aura:attribute name="mode" type="String" />
+    <aura:attribute name="fields" type="list" default="['Name','AnnualRevenue','Industry']" />
+    <aura:handler name="init" value="{!this}" action="{!c.show}"/>
+    <center> <b>ACCOUNT DATA </b></center>
+    <lightning:layout>
+        <lightning:layoutItem size="8" padding="around-small">
+            <div class="slds-box">
+                <lightning:datatable keyField="id"
+                                     data="{! v.data }"
+                                     columns="{! v.columns }"
+                                     hideCheckboxColumn="true"
+                                     onrowaction="{!c.view}"/>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="4" padding="around-small">
+            <aura:if isTrue="{!v.flag}">
+                <div class="slds-box">
+                    <lightning:recordForm recordId="{!v.recId}" 
+                                          objectApiName="Account"
+                                          mode="{!v.mode}"
+                                          fields="{!v.fields}"/>
+                </div>
+            </aura:if>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

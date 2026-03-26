@@ -1,0 +1,16 @@
+<aura:component controller="Apex_C7" >
+    <aura:attribute name="cont" type="Contact" default="{'sObjectType':'Contact',
+                                                        'LastName':'',
+                                                        'FirstName':'',
+                                                        'Phone':''}"/>
+    <aura:attribute name="recId" type="Id" default=""/>
+    <lightning:card title="Create Contact" iconName="standard:contact">
+        <lightning:input label="Last Name" value="{!v.cont.LastName}" />
+        <lightning:input label="First Name" value="{!v.cont.FirstName}"/>
+        <lightning:input label="Phone" value="{!v.cont.Phone}" />
+      <aura:set attribute="footer">
+            <lightning:button label="Create" onclick="{!c.show}"/>
+        </aura:set>  
+    </lightning:card>
+    {!v.recId}
+</aura:component>

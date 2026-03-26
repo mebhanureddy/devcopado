@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Profile</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Profiles</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Income --></label>
+        <name>Annual_Income__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assets Value --></label>
+        <name>Assets_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caste --></label>
+        <name>Caste__c</name>
+        <picklistValues>
+            <masterLabel>BC</masterLabel>
+            <translation><!-- BC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inter-Caste</masterLabel>
+            <translation><!-- Inter-Caste --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OC</masterLabel>
+            <translation><!-- OC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SC</masterLabel>
+            <translation><!-- SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ST</masterLabel>
+            <translation><!-- ST --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date of Bith --></label>
+        <name>Date_of_Bith__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drinking Habit --></label>
+        <name>Drinking_Habit__c</name>
+        <picklistValues>
+            <masterLabel>Never Drinks</masterLabel>
+            <translation><!-- Never Drinks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Occasional Drinker</masterLabel>
+            <translation><!-- Occasional Drinker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regular Drinker</masterLabel>
+            <translation><!-- Regular Drinker --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Eating habit --></label>
+        <name>Eating_habit__c</name>
+        <picklistValues>
+            <masterLabel>Eggetarian</masterLabel>
+            <translation><!-- Eggetarian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Vegetarian</masterLabel>
+            <translation><!-- Non-Vegetarian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vegetarian</masterLabel>
+            <translation><!-- Vegetarian --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Education --></label>
+        <name>Education__c</name>
+        <picklistValues>
+            <masterLabel>10+2</masterLabel>
+            <translation><!-- 10+2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10th</masterLabel>
+            <translation><!-- 10th --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B.Com</masterLabel>
+            <translation><!-- B.Com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B.Science</masterLabel>
+            <translation><!-- B.Science --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B.Tech</masterLabel>
+            <translation><!-- B.Tech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BA</masterLabel>
+            <translation><!-- BA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBA</masterLabel>
+            <translation><!-- BBA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BED</masterLabel>
+            <translation><!-- BED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LLB</masterLabel>
+            <translation><!-- LLB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LLM</masterLabel>
+            <translation><!-- LLM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M.Tech</masterLabel>
+            <translation><!-- M.Tech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA</masterLabel>
+            <translation><!-- MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MBA</masterLabel>
+            <translation><!-- MBA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCA</masterLabel>
+            <translation><!-- MCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSC</masterLabel>
+            <translation><!-- MSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PhD</masterLabel>
+            <translation><!-- PhD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Height --></label>
+        <name>Height__c</name>
+    </fields>
+    <fields>
+        <label><!-- Languages Known --></label>
+        <name>Languages_Known__c</name>
+        <picklistValues>
+            <masterLabel>Bengali</masterLabel>
+            <translation><!-- Bengali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English</masterLabel>
+            <translation><!-- English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hindi</masterLabel>
+            <translation><!-- Hindi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kannada</masterLabel>
+            <translation><!-- Kannada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marathi</masterLabel>
+            <translation><!-- Marathi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamil</masterLabel>
+            <translation><!-- Tamil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telugu</masterLabel>
+            <translation><!-- Telugu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urdu</masterLabel>
+            <translation><!-- Urdu --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>Bangalore</masterLabel>
+            <translation><!-- Bangalore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guntur</masterLabel>
+            <translation><!-- Guntur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyderabad</masterLabel>
+            <translation><!-- Hyderabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vijayawada</masterLabel>
+            <translation><!-- Vijayawada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warangal</masterLabel>
+            <translation><!-- Warangal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MailID --></label>
+        <name>MailID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mother Tongue --></label>
+        <name>Mother_Tongue__c</name>
+        <picklistValues>
+            <masterLabel>Angika</masterLabel>
+            <translation><!-- Angika --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arunachali</masterLabel>
+            <translation><!-- Arunachali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assamese</masterLabel>
+            <translation><!-- Assamese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awadhi</masterLabel>
+            <translation><!-- Awadhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bengali</masterLabel>
+            <translation><!-- Bengali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bihari</masterLabel>
+            <translation><!-- Bihari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chatisgarhi</masterLabel>
+            <translation><!-- Chatisgarhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dogri</masterLabel>
+            <translation><!-- Dogri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarati</masterLabel>
+            <translation><!-- Gujarati --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hindi</masterLabel>
+            <translation><!-- Hindi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kannada</masterLabel>
+            <translation><!-- Kannada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malayalam</masterLabel>
+            <translation><!-- Malayalam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marathi</masterLabel>
+            <translation><!-- Marathi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marwari</masterLabel>
+            <translation><!-- Marwari --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miji</masterLabel>
+            <translation><!-- Miji --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mizo</masterLabel>
+            <translation><!-- Mizo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monpa</masterLabel>
+            <translation><!-- Monpa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nepali</masterLabel>
+            <translation><!-- Nepali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nicobarese</masterLabel>
+            <translation><!-- Nicobarese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oriya</masterLabel>
+            <translation><!-- Oriya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjabi</masterLabel>
+            <translation><!-- Punjabi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajasthani</masterLabel>
+            <translation><!-- Rajasthani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanskrit</masterLabel>
+            <translation><!-- Sanskrit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santhali</masterLabel>
+            <translation><!-- Santhali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sindhi</masterLabel>
+            <translation><!-- Sindhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sourashtra</masterLabel>
+            <translation><!-- Sourashtra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamil</masterLabel>
+            <translation><!-- Tamil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telugu</masterLabel>
+            <translation><!-- Telugu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tripuri</masterLabel>
+            <translation><!-- Tripuri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tulu</masterLabel>
+            <translation><!-- Tulu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urdu</masterLabel>
+            <translation><!-- Urdu --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Occupation --></label>
+        <name>Occupation__c</name>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Wager</masterLabel>
+            <translation><!-- Daily Wager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Govt Employee</masterLabel>
+            <translation><!-- Govt Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private Employee</masterLabel>
+            <translation><!-- Private Employee --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Password --></label>
+        <name>Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo --></label>
+        <name>Photo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Religion --></label>
+        <name>Religion__c</name>
+        <picklistValues>
+            <masterLabel>Christian</masterLabel>
+            <translation><!-- Christian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hindu</masterLabel>
+            <translation><!-- Hindu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inter Religion</masterLabel>
+            <translation><!-- Inter Religion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muslim</masterLabel>
+            <translation><!-- Muslim --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Smoking --></label>
+        <name>Smoking__c</name>
+        <picklistValues>
+            <masterLabel>Non-Smoker</masterLabel>
+            <translation><!-- Non-Smoker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smoker</masterLabel>
+            <translation><!-- Smoker --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

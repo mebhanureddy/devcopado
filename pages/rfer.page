@@ -1,0 +1,50 @@
+<apex:page standardController="Account" recordSetVar="arecs" title="Accounts:Home">
+    <apex:sectionHeader title="Accounts" subtitle="Home" help="https://help.salesforce.com"/>
+    <apex:form >
+       <apex:outputLabel >View:</apex:outputLabel>
+       
+        &nbsp;&nbsp;
+       <apex:selectList size="1" value="{!filterid}">
+          <apex:selectOptions value="{!listviewoptions}"></apex:selectOptions>
+          <apex:actionSupport event="onchange" reRender="pb"/>
+        </apex:selectList> <br/><br/>
+       <apex:pageBlock title="Recent Accounts" id="pb">
+          <apex:pageBlockButtons location="top">
+              <apex:commandButton value="New" action="{!create}"/>
+              <span style="float:right">
+                 <apex:selectList size="1">
+                     
+                     <apex:selectOption itemLabel="Recently Created" itemValue="rc"></apex:selectOption>
+                     <apex:selectOption itemLabel="Recently Modified" itemValue="rc1"></apex:selectOption>
+                     <apex:selectOption itemLabel="Recently viewed" itemValue="rc2"></apex:selectOption>
+                 </apex:selectList>
+              </span>
+          </apex:pageBlockButtons>
+           <apex:pageBlockTable value="{!arecs}" var="a">
+               <apex:column width="5px">
+                   <apex:facet name="header">
+                       <apex:inputCheckbox />
+                   </apex:facet>
+                   <apex:inputCheckbox />
+               </apex:column>
+               <apex:column width="100px">
+                   <apex:facet name="header">
+                       Action
+                   </apex:facet>
+                   <apex:commandLink value="Edit" action="/{!a.id}/e?retURL={!a.id}" style="color:steelblue;"/>
+                   &nbsp;| &nbsp;
+                   <apex:commandLink value="Delete" action="URLFOR($Action.Account.delete,a.id)" style="color:red;"/>
+               </apex:column>
+               <apex:column value="{!a.name}"/>
+               <apex:column value="{!a.industry}"/>
+               <apex:column value="{!a.phone}"/>
+               <apex:column value="{!a.rating}"/>
+               <apex:column Headervalue="Contacts">
+                   <apex:repeat value="{!a.contacts}" var="b">
+                       {!b.lastname}{!b.firstname}
+                   </apex:repeat>
+               </apex:column>
+           </apex:pageBlockTable>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

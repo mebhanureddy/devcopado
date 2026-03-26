@@ -1,0 +1,12 @@
+<apex:page standardController="Account" extensions="successerror"  >
+    <apex:form >
+   	   <apex:pageBlock >
+        <apex:pageMessages id="showmsg"></apex:pageMessages>
+                <apex:pageBlockSection >
+           		    <apex:inputField value="{!acc.Name}" required="true"/>
+           		    <apex:inputField value="{!acc.phone}" required="true"/>
+                </apex:pageBlockSection>
+        <apex:commandButton value="submit" action="{!save}" rerender="showmsg"/>    
+      </apex:pageBlock>
+    </apex:form>
+</apex:page>
