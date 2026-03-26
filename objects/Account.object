@@ -3,7 +3,6 @@
     <fields>
         <fullName>Type__c</fullName>
         <label>Type</label>
-        //
         <required>true</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
@@ -24,11 +23,6 @@
                 <value>
                     <fullName>ENT</fullName>
                     <default>false</default>
-                    <label>ENT</label>
-                </value>
-                <value>
-                    <fullName>DummyENT</fullName>
-                    <default>true</default>
                     <label>ENT</label>
                 </value>
                 <value>
