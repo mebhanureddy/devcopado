@@ -27,6 +27,11 @@
                     <label>ENT</label>
                 </value>
                 <value>
+                    <fullName>DummyENT</fullName>
+                    <default>true</default>
+                    <label>ENT</label>
+                </value>
+                <value>
                     <fullName>Multispeciality</fullName>
                     <default>false</default>
                     <label>Multispeciality</label>
