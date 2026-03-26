@@ -10,12 +10,12 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Doctor_Base__c</fullName>
+        <fullName>Email2__c</fullName>
         <externalId>false</externalId>
-        <label>Doctor Base</label>
+        <label>Email2</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
+        <type>Email</type>
         <unique>false</unique>
     </fields>
 </CustomObject>
