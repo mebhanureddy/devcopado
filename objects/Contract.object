@@ -332,6 +332,10 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>ShippingAddress2</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
         <fullName>SpecialTerms</fullName>
         <trackHistory>true</trackHistory>
     </fields>
